@@ -1,18 +1,18 @@
 <template>
   <v-layout>
     <v-flex text-xs-center>
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
-      >
+
       <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
+
+      <v-card>
+        <v-card-text>
+          <h1>About</h1>
+          <h4> Welcome to my ICT Final Project!!</h4>
+          <p>Hey! This website is for Ayb students, teachers and staff. Cafeteria workers can post daily menus here and staff, students can choose what they are going to eat. So we will not have some extra food, we have to throw away.
+          </p>
+          <img src=https://foundation.ayb.am/frontend/images/projects/Ayb%20Learning%20Hub%203000(1).jpg width="1000px" height="300px">
+        </v-card-text>
+      </v-card>
       </blockquote>
     </v-flex>
   </v-layout>

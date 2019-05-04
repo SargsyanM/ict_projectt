@@ -96,12 +96,12 @@ export default {
       items: [
         {
           icon: 'apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'bubble_chart',
-          title: 'Inspire',
+          title: 'About',
           to: '/inspire'
         }
       ],
