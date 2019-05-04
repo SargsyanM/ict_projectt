@@ -9,17 +9,17 @@
     >
       <v-list>
         <v-list-tile
-          v-for="(item, i) in items"
+          v-for="(item, i) in drawerList"
           :key="i"
           :to="item.to"
           router
           exact
         >
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon style="color: white">{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
+            <v-list-tile-title v-text="item.title" style="color: white"/>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -93,22 +93,29 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'apps',
-          title: 'Home',
-          to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'About',
-          to: '/inspire'
-        }
-      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Ayb Cafeteria'
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.getters.user
+    },
+    drawerList () {
+      if (!this.user) {
+        return [
+          {icon: 'apps', title: 'Home', to: '/'},
+          {icon: 'person', title: 'Sign in', to: '/signin'},
+        ]
+      } else {
+        return [
+          {icon: 'apps', title: 'Home', to: '/'},
+          {icon: 'person', title: 'Profile', to: '/profile'},
+          {icon: 'bubble_chart', title: 'About', to: '/inspire'},
+        ]
+      }
     }
   }
 }
