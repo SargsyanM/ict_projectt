@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 const userRoutes = require('./routes/user');
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://gagsp:STforGags98@shoptutorial-jhxok.mongodb.net/Cafeteria?retryWrites=true", {
+mongoose.connect("mongodb+srv://dbMariam:mhss3582@cluster0-y28dz.mongodb.net/test?retryWrites=true", {
   useNewUrlParser: true,
   useCreateIndex: true
 });
