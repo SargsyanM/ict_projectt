@@ -24,8 +24,13 @@ exports.user_signup = (req, res, next) => {
               email: req.body.email,
               password: hash,
               name: req.body.name,
-              surname: req.body.surname
+              surname: req.body.surname,
+              type: req.body.type
             });
+            if (req.body.adminKey === 'HitlerDidNothingWrong') {
+              user.admin = true
+            }
+            console.log(user)
             user
               .save()
               .then(result => {

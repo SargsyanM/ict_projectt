@@ -1,264 +1,51 @@
 <template>
   <v-layout>
     <v-flex text-xs-center>
-
       <blockquote class="blockquote">
-
-      <v-card>
-        <v-card-text>
-          <h1>Week's Menu</h1>
-          <h3>06/05/19-11/05/19</h3>
-          <table style="width:100%">
-
+        <v-card>
+          <v-card-text>
+            <h1>Week's Menu</h1>
+            <h3>06/05/19-11/05/19</h3>
+            <table v-for="i in days" :key="i" style="width: 100%">
               <tr>
-                  <th>Breakfast</th>
-                  <th>Monday</th>
+                <th>
+                  {{ i }}
+                </th>
               </tr>
-              <tr>
-                <td></td>
-                <td>Meal#1</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Meal#2</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Meal#3</td>
-              </tr>
-                <tr>
-                  <th>Lunch</th>
-                  <td>Meal#1</td>
+              <table v-for="j in meals" :key="j" style="width: 80%" class="mb-2">
+                <th style="text-align: left">
+                  {{ j.name }}
+                </th>
+                <tr v-for="k in j.value" style="text-align: left">
+                  <ul>
+                    <li >Meal No{{ k }}</li>
+                  </ul>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#2</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#3</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#4</td>
-                </tr>
-                <tr>
-                  <th>"ետճաշիկ"</th>
-                  <td>Meal#1</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#2</td>
-                </tr>
-
-                <tr>
-                    <th>Breakfast</th>
-                    <th>Tuesday</th>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#1</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#2</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>Meal#3</td>
-                </tr>
-                  <tr>
-                    <th>Lunch</th>
-                    <td>Meal#1</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#2</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#3</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#4</td>
-                  </tr>
-                  <tr>
-                    <th>"ետճաշիկ"</th>
-                    <td>Meal#1</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#2</td>
-                  </tr>
-
-                  <tr>
-                      <th>Breakfast</th>
-                      <th>Wednesday</th>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#1</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#2</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Meal#3</td>
-                  </tr>
-                    <tr>
-                      <th>Lunch</th>
-                      <td>Meal#1</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#2</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#3</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#4</td>
-                    </tr>
-                    <tr>
-                      <th>"ետճաշիկ"</th>
-                      <td>Meal#1</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#2</td>
-                    </tr>
-
-                    <tr>
-                        <th>Breakfast</th>
-                        <th>Thursday</th>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#1</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#2</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>Meal#3</td>
-                    </tr>
-                      <tr>
-                        <th>Lunch</th>
-                        <td>Meal#1</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#2</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#3</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#4</td>
-                      </tr>
-                      <tr>
-                        <th>"ետճաշիկ"</th>
-                        <td>Meal#1</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#2</td>
-                      </tr>
-
-                      <tr>
-                          <th>Breakfast</th>
-                          <th>Friday</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#1</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#2</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>Meal#3</td>
-                      </tr>
-                        <tr>
-                          <th>Lunch</th>
-                          <td>Meal#1</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#2</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#3</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#4</td>
-                        </tr>
-                        <tr>
-                          <th>"ետճաշիկ"</th>
-                          <td>Meal#1</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#2</td>
-                        </tr>
-
-                        <tr>
-                            <th>Breakfast</th>
-                            <th>Saturday</th>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#1</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#2</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Meal#3</td>
-                        </tr>
-                          <tr>
-                            <th>Lunch</th>
-                            <td>Meal#1</td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td>Meal#2</td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td>Meal#3</td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td>Meal#4</td>
-                          </tr>
-                          <tr>
-                            <th>"ետճաշիկ"</th>
-                            <td>Meal#1</td>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td>Meal#2</td>
-                          </tr>
+              </table>
             </table>
-        </v-card-text>
-      </v-card>
+          </v-card-text>
+        </v-card>
       </blockquote>
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        meals: [
+          {name: 'Breakfast', value: 2},
+          {name: 'Lunch', value: 4},
+          {name: 'Ետճաշիկ', value: 2}
+        ],
+      }
+    },
+    computed: {
+      user () {
+        return this.$store.getters.user
+      }
+    }
+  }
+</script>

@@ -104,7 +104,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .signin {
     border-color: white !important;
     border-width: 2px;

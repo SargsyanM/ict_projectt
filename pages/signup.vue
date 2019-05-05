@@ -71,6 +71,7 @@
                     />
                   </v-flex>
                 </v-layout>
+
                 <v-layout row>
                   <v-flex py-4 xs12 md8 offset-md2 text-xs-left>
                     <input
@@ -85,6 +86,24 @@
                       required
                       type="password"
                       flat
+                    />
+                  </v-flex>
+                </v-layout>
+
+                <v-layout row>
+                  <v-flex py-4 xs12 md8 offset-md2 text-xs-left>
+                    <input
+                      class="signup"
+                      placeholder="Admin key"
+                      id="adminKey"
+                      v-model="adminKey"
+                      solo
+                      header="Admin Key"
+                      style="height: 48px; width: 270px"
+                      flat
+                      required
+                      type="password"
+                      name="adminKey"
                     />
                   </v-flex>
                 </v-layout>
@@ -120,6 +139,7 @@
         name: '',
         surname: '',
         snackbarText: '',
+        adminKey: '',
         emailError: false,
         snackbar: false
       }
@@ -147,8 +167,8 @@
   }
 </script>
 
-<style scoped>
-  .signin {
+<style>
+  .signup {
     border-color: white !important;
     border-width: 2px;
     border-style: solid
