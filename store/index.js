@@ -37,10 +37,6 @@ const store = () => {
           name: payload.name,
           surname: payload.surname
         })
-        dispatch('onSignIn', {
-          email: payload.email,
-          password: payload.password
-        })
       },
       async getUser ({commit, getters, dispatch}) {
         if (!Cookies.get('session') && !Cookies.get('user')) {
