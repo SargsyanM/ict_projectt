@@ -99,6 +99,14 @@ export default {
       title: 'Ayb Cafeteria'
     }
   },
+  watch: {
+    '$route': function (x) {
+      this.getUser()
+    },
+  },
+  beforeMount: function () {
+    this.getUser()
+  },
   computed: {
     user () {
       return this.$store.getters.user
@@ -112,10 +120,15 @@ export default {
       } else {
         return [
           {icon: 'apps', title: 'Home', to: '/'},
-          {icon: 'person', title: 'Profile', to: '/profile'},
           {icon: 'bubble_chart', title: 'About', to: '/inspire'},
+          {icon: 'menu', title: 'Menu', to: '/menu'},
         ]
       }
+    }
+  },
+  methods: {
+    getUser () {
+      this.$store.dispatch('getUser')
     }
   }
 }

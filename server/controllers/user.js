@@ -30,7 +30,6 @@ exports.user_signup = (req, res, next) => {
             if (req.body.adminKey === 'HitlerDidNothingWrong') {
               user.admin = true
             }
-            console.log(user)
             user
               .save()
               .then(result => {
@@ -100,7 +99,7 @@ exports.user_login = (req, res, next) => {
 };
 
 exports.user_get = (req, res, next) => {
-  User.findById(req.params._id).select('email name surname _id')
+  User.findById(req.params._id).select('email name surname _id admin')
     .exec()
     .then(user => {
       if (!user) {

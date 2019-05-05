@@ -24,9 +24,7 @@ const store = () => {
         const response = await UserService.login(payload)
         if (response.status === 200) {
           commit('setUser', response.data.user)
-          commit('setSession', response.data.token)
           Cookies.set('user', response.data.user)
-          Cookies.set('session', response.data.token)
           this.$router.push('/')
         }
       },
@@ -39,17 +37,13 @@ const store = () => {
         })
       },
       async getUser ({commit, getters, dispatch}) {
-        if (!Cookies.get('session') && !Cookies.get('user')) {
+        if (!Cookies.get('user') || getters.user) {
           return
         }
-        try {
-          const response = await UserService.getUser({
-            id: jwt.verify(Cookies.get('session'), 'secret')._id
-          })
-          commit('setUser', response.data.user)
-        } catch {
-          dispatch('logout')
-        }
+        const response = await UserService.getUser({
+          id: Cookies.get('user')._id
+        })
+        commit('setUser', response.data.user)
       },
       logout ({commit}) {
         commit('setUser', null)
