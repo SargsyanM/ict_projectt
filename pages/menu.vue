@@ -5,7 +5,8 @@
         <v-card>
           <v-card-text>
             <h1>Week's Menu</h1>
-            <h3>06/05/19-11/05/19</h3>
+            <h3 v-if="!user.admin">{{ date }}</h3>
+            <h3 v-else><input :placeholder="date"></h3>
             <table v-for="(i, i_index) in days" :key="i_index" style="width: 100%">
               <tr>
                 <th>
@@ -16,7 +17,7 @@
                 <th style="text-align: left">
                   {{ j.name }}
                 </th>
-                <tr v-if="user.admin === true" style="text-align: left">
+                <tr v-if="user.admin" style="text-align: left">
                   <ul v-for="(k, k_index) in j.value" :key="k_index">
                     <li><input :placeholder="'Meal No' + (k_index+1)" class="input"></li>
                   </ul>
@@ -45,11 +46,7 @@
           {name: 'Lunch', value: 4},
           {name: 'Ետճաշիկ', value: 2}
         ],
-      }
-    },
-    watch: {
-      user () {
-        console.log(user)
+        date: "06/05/19-11/05/19"
       }
     },
     computed: {

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Cookies from 'vue-cookies'
-import jwt from 'jsonwebtoken'
 
 import UserService from '../services/UserService'
 
@@ -47,9 +46,7 @@ const store = () => {
       },
       logout ({commit}) {
         commit('setUser', null)
-        commit('setSession', null)
         Cookies.remove('user')
-        Cookies.remove('session')
         this.$router.push("/")
       },
     },
